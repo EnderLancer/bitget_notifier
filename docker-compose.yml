@@ -1,0 +1,10 @@
+services:
+  notifier:
+    build: .
+    image: bitget-notifier:latest
+    container_name: bitget-notifier
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
